@@ -10,7 +10,7 @@ namespace ListaDeTarefas
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage (new ListaDeTarefas.Telas.Inicio());
         }
 
         protected override void OnStart()
