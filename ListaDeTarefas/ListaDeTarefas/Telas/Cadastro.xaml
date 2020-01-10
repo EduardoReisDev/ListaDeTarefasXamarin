@@ -7,9 +7,28 @@
              x:Class="ListaDeTarefas.Telas.Cadastro">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Nome"/>
+            <Entry x:Name="TxtNome"/>
+            <Label Text="Prioridade" FontAttributes="Bold"/>
+            <StackLayout x:Name="SLPrioridades">
+                <StackLayout Spacing="10">
+                    <Image/>
+                    <Label Text="Urgente e importante" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Spacing="10">
+                    <Image/>
+                    <Label Text="Urgente e não importante" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Spacing="10">
+                    <Image/>
+                    <Label Text="Não urgente e importante" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Spacing="10">
+                    <Image/>
+                    <Label Text="Não urgente e não importante" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+            <Button Text="OK" TextColor="White" BackgroundColor="Blue" HorizontalOptions="End"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
