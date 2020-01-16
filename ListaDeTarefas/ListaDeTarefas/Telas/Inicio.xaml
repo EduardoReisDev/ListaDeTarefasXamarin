@@ -11,31 +11,31 @@
 
             <StackLayout BackgroundColor="Blue" HeightRequest="250">
                 <Label Text="Meu Dia" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"/>
-                <Label Text="Quinta, 08/01/2020" HorizontalOptions="Start" VerticalOptions="End" TextColor="White"/>
+                <Label Text="" x:Name="DataHoje" HorizontalOptions="Start" VerticalOptions="End" TextColor="White"/>
             </StackLayout>
             
             <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10">
                 
                 <StackLayout Orientation="Horizontal" Spacing="15">
-                    <Image VerticalOptions="Center"/>
+                    <Image VerticalOptions="Center" Source="CheckOff.png"/>
                     <Label HorizontalOptions="FillAndExpand" Text="Task 1"/>
-                    <Image VerticalOptions="Center"/>
-                    <Image VerticalOptions="Center"/>
+                    <Image VerticalOptions="Center" Source="p1.png"/>
+                    <Image VerticalOptions="Center" Source="Delete.png"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="15">
-                    <Image VerticalOptions="Center"/>
+                    <Image VerticalOptions="Center" Source="CheckOn.png"/>
                     <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="0">
                         <Label Text="Task 1"/>
                         <Label Text="Finalizado em 20/01/2018 20h00" TextColor="Gray" FontSize="10"/>
                     </StackLayout>
-                    <Image VerticalOptions="Center"/>
-                    <Image VerticalOptions="Center"/>
+                    <Image VerticalOptions="Center" Source="p2.png"/>
+                    <Image VerticalOptions="Center" Source="Delete.png"/>
                 </StackLayout>
                 
             </StackLayout>
 
-            <Button Text="Adicionar" HorizontalOptions="Center" Clicked="ActionGoCadastro"/>
+            <Button ImageSource="AddBotao.png" BackgroundColor="Transparent" HorizontalOptions="Center" Clicked="ActionGoCadastro"/>
 
         </StackLayout>
         

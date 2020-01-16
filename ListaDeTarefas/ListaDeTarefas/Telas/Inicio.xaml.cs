@@ -15,6 +15,8 @@ namespace ListaDeTarefas.Telas
         public Inicio()
         {
             InitializeComponent();
+
+            DataHoje.Text = DateTime.Now.DayOfWeek.ToString() + "," + DateTime.Now.ToString();
         }
 
         public void ActionGoCadastro (object sender, EventArgs args)
