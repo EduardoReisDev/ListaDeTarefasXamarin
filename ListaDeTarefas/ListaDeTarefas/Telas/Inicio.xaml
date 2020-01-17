@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="ListaDeTarefas.Telas.Inicio">
     <ContentPage.Content>
-        
+
         <StackLayout>
 
             <StackLayout BackgroundColor="Blue" HeightRequest="250">
