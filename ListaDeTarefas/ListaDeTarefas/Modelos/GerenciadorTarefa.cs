@@ -16,10 +16,10 @@ namespace ListaDeTarefas.Modelos
             SalvarNoProperties(Lista);
         }
 
-        public void Deletar(Tarefa tarefa)
+        public void Deletar(int index)
         {
             Lista = Listagem();
-            Lista.Remove(tarefa);
+            Lista.RemoveAt(index);
             SalvarNoProperties(Lista);
         }
 
@@ -27,6 +27,8 @@ namespace ListaDeTarefas.Modelos
         {
             Lista = Listagem();
             Lista.RemoveAt(index);
+
+            tarefa.DataFinalizacao = DateTime.Now;
             Lista.Add(tarefa);
             SalvarNoProperties(Lista);
         }

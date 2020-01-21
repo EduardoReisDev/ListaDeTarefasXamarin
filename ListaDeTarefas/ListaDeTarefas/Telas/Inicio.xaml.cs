@@ -31,15 +31,26 @@ namespace ListaDeTarefas.Telas
         {
             SLTarefas.Children.Clear();
             List<Tarefa> Lista =  new GerenciadorTarefa().Listagem();
+
+            int i = 0;
             foreach(Tarefa tarefa in Lista)
             {
-                LinhaStackLayout(tarefa);
+                LinhaStackLayout(tarefa, i);
+                i++;
             }
         }
 
-        public void LinhaStackLayout(Tarefa tarefa)
+        public void LinhaStackLayout(Tarefa tarefa, int index)
         {
             Image Delete = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("Delete.png") };
+
+            TapGestureRecognizer DeteleTap = new TapGestureRecognizer();
+            DeteleTap.Tapped += delegate
+            {
+                new GerenciadorTarefa().Deletar(index);
+                CarregarTarefas();
+            };
+            Delete.GestureRecognizers.Add(DeteleTap);
             Image Prioridade = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile(tarefa.Prioridade + ".png") };
 
             View StackCentral = null;
@@ -54,6 +65,17 @@ namespace ListaDeTarefas.Telas
                 ((StackLayout)StackCentral).Children.Add(new Label() { Text = "Finalizado em " + tarefa.DataFinalizacao.Value.ToString("dd/MM/yyyy - hh:mm"), TextColor = Color.Gray, FontSize = 10});
             }
             Image Check = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("CheckOff.png") };
+            if (tarefa.DataFinalizacao != null)
+            {
+                Check.Source = ImageSource.FromFile("CheckOn.png");
+            }
+            TapGestureRecognizer CheckTap = new TapGestureRecognizer();
+            CheckTap.Tapped += delegate
+            {
+                new GerenciadorTarefa().Finalizar(index, tarefa);
+                CarregarTarefas();
+            };
+            Check.GestureRecognizers.Add(CheckTap);
             StackLayout Linha = new StackLayout() { Orientation = StackOrientation.Horizontal, Spacing = 15 };
             Linha.Children.Add(Check);
             Linha.Children.Add(StackCentral);
