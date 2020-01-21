@@ -51,7 +51,7 @@ namespace ListaDeTarefas.Telas
             {
                 DisplayAlert("ERRO", "Prioridade nao foi informada!", "OK");
             }
-          
+  
             if(ErroExiste == false)
             {
                 Tarefa tarefa = new Tarefa();
